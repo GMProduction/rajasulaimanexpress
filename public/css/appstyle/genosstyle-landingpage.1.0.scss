@@ -188,7 +188,7 @@ body {
 }
 p {
     &.invert {
-        color: #ccc;
+        color: white;
     }
 }
 .container {
@@ -201,7 +201,7 @@ p {
         margin-bottom: 0;
 
         &.invert {
-            color: #ccc;
+            color: white;
         }
     }
 
@@ -212,7 +212,7 @@ p {
         color: $primary-color;
         margin: 0;
         &.invert {
-            color: $accent-color;
+            color: white;
         }
     }
 }
@@ -238,7 +238,7 @@ p {
     position: relative;
     width: 100%;
     min-height: 150px;
-    background-color: $primary-color-d5;
+    background-color: $accent-color;
     z-index: 2;
     padding: 30px 0;
 
@@ -327,7 +327,7 @@ p {
 }
 
 .tentang-kami {
-    background-color: $primary-color-d5;
+    background-color: $accent-color;
 
     .icon {
         height: 50px;
@@ -341,7 +341,7 @@ p {
     }
 
     .isi {
-        color: #ccc;
+        color: white;
         margin: 0;
         font-size: 0.8rem;
         font-weight: 400;
@@ -478,7 +478,7 @@ p {
     position: relative;
     width: 100%;
     min-height: 150px;
-    background-color: $primary-color-d5;
+    background-color: $accent-color;
     z-index: 2;
     padding: 30px 0;
 
@@ -491,7 +491,7 @@ p {
 
     .isi {
         font-size: 1.2rem;
-        color: #ddd;
+        color: white;
         // font-weight: bold;
         text-align: center;
     }
@@ -562,7 +562,7 @@ p {
         height: 200px;
         text-align: center;
     }
-    background-color: $primary-color-d5;
+    background-color: $accent-color;
 }
 
 .facebookbutton {

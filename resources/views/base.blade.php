@@ -33,7 +33,7 @@
         <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-transparent " style="height: 4em; ">
             <div class="container">
                 <a class="navbar-brand text-xl text-primary" href="#" style=" font-weight: bold"><img
-                        style="height: 2em" src="{{ asset('images/local/logo.png') }}"></a>
+                        style="height: 3em" src="{{ asset('images/local/logo.png') }}"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -161,7 +161,7 @@
         </footer>
 
         <div class="d-flex bottom-footer justify-content-center align-items-center">
-            <p style="color: #C8C8C8;" class="mt-4 f08">2022 - All rights reserved
+            <p style="color: white;" class="mt-4 f08">2022 - All rights reserved
                 to
                 ©RajasulaimanExpress
             </p>

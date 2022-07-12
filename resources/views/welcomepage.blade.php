@@ -305,8 +305,8 @@
         <div class="container ">
 
             <div class="row">
-                <div class="col-lg-4 col-md-3"></div>
-                <div class="col-lg-4 col-lg-6 col-sm-12 text-center">
+                <div class="col-lg-3 col-md-3"></div>
+                <div class="col-lg-6 col-md-6 col-sm-12 text-center">
                     <p class="judul mb-5" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
                         data-aos-duration="1000">Tertarik
                         berkarir bekerja bersama dengan menjadi bagian tim terbaik kami?</p>
