@@ -301,7 +301,7 @@
         </div>
     </div>
 
-    <div class="karir pb-5">
+    <div class="karir">
         <div class="container ">
 
             <div class="row">
