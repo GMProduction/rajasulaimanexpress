@@ -305,21 +305,17 @@
         <div class="container ">
 
             <div class="row">
-                <div class="col-lg-3 col-md-3"></div>
-                <div class="col-lg-6 col-md-6 col-sm-12 text-center">
-                    <p class="judul mb-5" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">Tertarik
-                        berkarir bekerja bersama dengan menjadi bagian tim terbaik kami?</p>
-
-                    <p class="isi mb-5" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
-                        Bergabung dengan tim terbaik kami yang memiliki semangat dan antusias dalam bidang
-                        forwarding dan logistik</p>
-
-                    <a class="button" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
-                        KARIR
-                    </a>
+                <div class="col-lg-4 col-md-4 col-sm-12 karir"><p class="judul mb-5" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
+                    data-aos-duration="1000">Tertarik
+                    berkarir bekerja bersama dengan menjadi bagian tim terbaik kami?</p></div>
+                <div class="col-lg-5 col-md-5 col-sm-12 karir"> <p class="isi mb-5" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
+                    data-aos-duration="1000">
+                    Bergabung dengan tim terbaik kami yang memiliki semangat dan antusias dalam bidang
+                    forwarding dan logistik</p></div>
+                <div class="col-lg-3 col-md-3 col-sm-12 karir"> <a class="button" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
+                    data-aos-duration="1000">
+                    KARIR
+                </a></div>
                 </div>
                 {{-- <div class="col-lg-4"></div> --}}
 
