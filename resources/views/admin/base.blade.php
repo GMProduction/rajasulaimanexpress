@@ -4,8 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
-    <title>Skripsi || Admin</title>
+    <title>Radja Sulaiman Express || Admin</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -33,6 +34,7 @@
 
             <p class="title">
                 Nama Perusahaan
+
             </p>
         </div>
 
@@ -63,10 +65,22 @@
         <nav id="sidebar" class="sidebar card py-2">
             <ul class="nav flex-column" id="nav_accordion">
 
-                <li class="nav-item">
-                    <a class="title-role" href="#"> Admin </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="title-role" href="#"> Admin </a>--}}
+{{--                </li>--}}
 
+                <li class="nav-item">
+                    <a class="nav-link menu {{ \Illuminate\Support\Facades\Request::path() == 'dashboard' ? 'active' : ''}}" href="/dashboard">
+                        <i class="material-icons menu-icon">dashboard</i>
+                        <p class="menu-text">Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu {{ \Illuminate\Support\Facades\Request::path() == 'city' ? 'active' : ''}}" href="/city">
+                        <i class="material-icons menu-icon">location_city</i>
+                        <p class="menu-text">Kota</p>
+                    </a>
+                </li>
                 {{-- <li class="nav-item">
                     <a class="title-role" href="#"> Admin </a>
                 </li>
@@ -98,33 +112,33 @@
                     </a>
                 </li> --}}
 
-                <li class="nav-item">
-                    <a class="nav-link menu @if ($sidebar == 'user') active @endif" href="/admin/user">
-                        <i class="material-icons menu-icon">person</i>
-                        <p class="menu-text">User</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link menu @if ($sidebar == 'user') active @endif" href="/admin/user">--}}
+{{--                        <i class="material-icons menu-icon">person</i>--}}
+{{--                        <p class="menu-text">User</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="nav-item">
-                    <a class="nav-link menu @if ($sidebar == 'tipe') active @endif" href="/admin/tipe">
-                        <i class="material-icons menu-icon">type_specimen</i>
-                        <p class="menu-text">Tipe Layanan</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link menu @if ($sidebar == 'tipe') active @endif" href="/admin/tipe">--}}
+{{--                        <i class="material-icons menu-icon">type_specimen</i>--}}
+{{--                        <p class="menu-text">Tipe Layanan</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="nav-item">
-                    <a class="nav-link menu @if ($sidebar == 'kota') active @endif" href="/admin/kota">
-                        <i class="material-icons menu-icon">location_city</i>
-                        <p class="menu-text">Kota</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link menu @if ($sidebar == 'kota') active @endif" href="/admin/kota">--}}
+{{--                        <i class="material-icons menu-icon">location_city</i>--}}
+{{--                        <p class="menu-text">Kota</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 
-                <li class="nav-item">
-                    <a class="nav-link menu @if ($sidebar == 'harga') active @endif" href="/admin/harga">
-                        <i class="material-icons menu-icon">payments</i>
-                        <p class="menu-text">Harga</p>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a class="nav-link menu @if ($sidebar == 'harga') active @endif" href="/admin/harga">--}}
+{{--                        <i class="material-icons menu-icon">payments</i>--}}
+{{--                        <p class="menu-text">Harga</p>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
 {{--
                 <li class="nav-item">
                     <a class="nav-link menu @if ($sidebar == 'klinik') active @endif" href="/admin/klinik">
