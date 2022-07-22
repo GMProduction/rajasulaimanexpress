@@ -22,7 +22,8 @@ class CityController extends CustomController
     public function data()
     {
         try {
-            $data = City::all();
+            $data = City::with('province')
+                ->get();
             return $this->basicDataTables($data);
         } catch (\Exception $e) {
             return $this->basicDataTables([]);
@@ -33,11 +34,26 @@ class CityController extends CustomController
     {
         try {
             City::create([
-                'name' => $this->postField('name')
+                'name' => $this->postField('name'),
+                'province_id' => $this->postField('province')
             ]);
             return $this->jsonResponse('success', 200);
         } catch (\Exception $e) {
             return $this->jsonResponse('failed ' . $e->getMessage(), 500);
+        }
+    }
+
+    public function patch()
+    {
+        try {
+            $id = $this->postField('id');
+            $name = $this->postField('name');
+            $city = City::find($id);
+            if (!$city) {
+                return $this->jsonResponse('kota tidak di temukan', 202);
+            }
+        } catch (\Exception $e) {
+
         }
     }
 

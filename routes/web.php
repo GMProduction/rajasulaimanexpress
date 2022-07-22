@@ -57,7 +57,16 @@ Route::get('/admin/user', function () {
 });
 
 Route::match(['post', 'get'], '/login-admin', [\App\Http\Controllers\Admin\AuthController::class, 'login']);
+Route::get( '/logout', [\App\Http\Controllers\Admin\AuthController::class, 'logout']);
 Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index']);
+
+Route::group(['prefix' => '/province'], function () {
+    Route::get('/', [\App\Http\Controllers\Admin\ProvinceController::class, 'index']);
+    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\ProvinceController::class, 'store']);
+    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\ProvinceController::class, 'patch']);
+    Route::post('/create', [\App\Http\Controllers\Admin\CityController::class, 'create']);
+    Route::get('/data', [\App\Http\Controllers\Admin\CityController::class, 'data']);
+});
 
 Route::group(['prefix' => '/city'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\CityController::class, 'index']);

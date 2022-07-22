@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 
 
 use App\Helper\CustomController;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends CustomController
 {
@@ -29,5 +30,9 @@ class AuthController extends CustomController
         return view('admin.login');
     }
 
-
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 }

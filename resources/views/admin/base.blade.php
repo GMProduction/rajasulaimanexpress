@@ -20,7 +20,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('datatable/datatables.min.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('vitalets-bootstrap-datepicker/css/datepicker.css') }}" />
-
+    <link href="{{ asset('/css/sweetalert2.css') }}" rel="stylesheet">
+    <script src="{{ asset('/js/sweetalert2.min.js')}}"></script>
 </head>
 
 <body>
@@ -31,10 +32,8 @@
                 <span class="material-icons">menu
                 </span>
             </a>
-
             <p class="title">
-                Nama Perusahaan
-
+                Radja Sulaiman Express
             </p>
         </div>
 
@@ -73,6 +72,12 @@
                     <a class="nav-link menu {{ \Illuminate\Support\Facades\Request::path() == 'dashboard' ? 'active' : ''}}" href="/dashboard">
                         <i class="material-icons menu-icon">dashboard</i>
                         <p class="menu-text">Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu {{ \Illuminate\Support\Facades\Request::path() == 'province' ? 'active' : ''}}" href="/province">
+                        <i class="material-icons menu-icon">location_on</i>
+                        <p class="menu-text">Provinsi</p>
                     </a>
                 </li>
                 <li class="nav-item">
