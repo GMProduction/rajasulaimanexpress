@@ -65,9 +65,7 @@
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img class="icon mb-3" src="{{ asset('images/local/address.png') }}" />
                             <p class="judul">Alamat</p>
-                            <p class="isi">Jl. Gatot Subroto No. 1 No 7,</p>
-                            <p class="isi">Purwoyoso, Kec. Ngaliyan, Kota. Semarang,</p>
-                            <p class="isi">Jawa Tengah 50146</p>
+                            <p class="isi">Jl. Gatot Subroto No. 1 No 7,Purwoyoso, Kec. Ngaliyan, Kota. Semarang, Jawa Tengah 50146</p>
                         </div>
                     </div>
                 </div>
