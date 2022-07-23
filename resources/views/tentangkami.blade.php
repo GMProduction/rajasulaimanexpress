@@ -29,7 +29,7 @@
                 text-justify: inter-word;"
                 data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-duration="500">
                 PT.
-                Galatia Expressindo International Freights & Forwarding menawarkan layanan pengiriman barang baik
+                Radja Sulaiman Express International Freights & Forwarding menawarkan layanan pengiriman barang baik
                 impor maupun ekspor secara global. Dengan jaringan mitra dan agen yang luas di seluruh dunia, kami
                 dapat memberikan harga terbaik dan pilihan rute harga paling efisien.
 
