@@ -11,7 +11,7 @@
         <p class="title" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="300">
             Berita </p>
         <p class="sub" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200"
-            data-aos-duration="600">Raja Sulaiman Express</p>
+            data-aos-duration="600">Radja Sulaiman Express</p>
         <p class="isi" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400"
             data-aos-duration="900">Solusi layanan lengkap pengiriman barang anda </p>
     </div>

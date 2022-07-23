@@ -11,7 +11,7 @@
         <p class="title" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="300">
             Tentang Kami </p>
         <p class="sub" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200"
-            data-aos-duration="600">Raja Sulaiman Express</p>
+            data-aos-duration="600">Radja Sulaiman Express</p>
         <p class="isi" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400"
             data-aos-duration="900">Solusi layanan lengkap pengiriman barang anda </p>
     </div>
@@ -23,7 +23,7 @@
         <div class="layanan-kami mt-5">
 
             <p class="judul-content mb-5" data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-delay="0"
-                data-aos-duration="300">Raja Sulaiman Forwarding dan Logistik</p>
+                data-aos-duration="300">Radja Sulaiman Forwarding dan Logistik</p>
 
                 <p class="mb-5" style="text-align: justify;
                 text-justify: inter-word;"

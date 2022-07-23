@@ -11,7 +11,7 @@
         <p class="title" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="300">
             Hubungi Kami </p>
         <p class="sub" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200"
-            data-aos-duration="600">Raja Sulaiman Express</p>
+            data-aos-duration="600">Radja Sulaiman Express</p>
         <p class="isi" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400"
             data-aos-duration="900">Solusi layanan lengkap pengiriman barang anda </p>
     </div>
@@ -35,8 +35,7 @@
                         <i class="material-icons menu-icon me-3">home</i>
                         <div>
                             <p class="info fw-bold">Alamat Kantor</p>
-                            <p class="info">Jl. Radar Auri Blok B/32F Mekarsari, Cimanggis, Depok Jawa Barat,
-                                Indonesia 16452</p>
+                            <p class="info">Jl. Gatot Subroto No. 1 No 7, Purwoyoso, Kec. Ngaliyan, Kota. Semarang, Jawa Tengah 50146</p>
                         </div>
 
 
@@ -54,7 +53,7 @@
                         <i class="material-icons menu-icon me-3">mail</i>
                         <div>
                             <p class="info fw-bold">Email</p>
-                            <p class="info">info@rajasulaiman.com</p>
+                            <p class="info">rsx.srg@gmail.com</p>
 
                         </div>
                     </div>
@@ -63,7 +62,8 @@
                         <i class="material-icons menu-icon me-3">call</i>
                         <div>
                             <p class="info fw-bold">Telepon</p>
-                            <p class="info">+62 894 1924 4127</p>
+                            <p class="info">+62 823-3233-5533</p>
+                                <p class="info">+62 813-9129-1127</p>
 
                         </div>
                     </div>

@@ -52,8 +52,8 @@
 
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img class="icon mb-3" src="{{ asset('images/local/mail.png') }}" />
-                            <p class="judul">Jam Operasional</p>
-                            <p class="isi">info@rajasulaiman.com</p>
+                            <p class="judul">Email</p>
+                            <p class="isi">rsx.srg@gmail.com</p>
                         </div>
                     </div>
                 </div>
@@ -64,10 +64,10 @@
 
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img class="icon mb-3" src="{{ asset('images/local/address.png') }}" />
-                            <p class="judul">Jam Operasional</p>
-                            <p class="isi">Jl. Radar Auri Blok B/32F</p>
-                            <p class="isi">Mekarsari, Cimanggis, Depok</p>
-                            <p class="isi">Jawa Barat, Indonesia 16452</p>
+                            <p class="judul">Alamat</p>
+                            <p class="isi">Jl. Gatot Subroto No. 1 No 7,</p>
+                            <p class="isi">Purwoyoso, Kec. Ngaliyan, Kota. Semarang,</p>
+                            <p class="isi">Jawa Tengah 50146</p>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
             <p class="sub-judul-content" data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-delay="0"
                 data-aos-duration="500">Layanan Kami</p>
             <p class="judul-content mb-5" data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-delay="0"
-                data-aos-duration="300">Raja Sulaiman Forwarding dan Logistik</p>
+                data-aos-duration="300">Radja Sulaiman Forwarding dan Logistik</p>
 
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-12" data-aos="fade-up" data-aos-easing="ease-in-back"

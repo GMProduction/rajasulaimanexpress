@@ -107,8 +107,7 @@
                         <div class="d-flex mb-3">
                             <i class="material-icons menu-icon me-3">home</i>
                             <div>
-                                <p class="info">Jl. Radar Auri Blok B/32F Mekarsari, Cimanggis, Depok Jawa Barat,
-                                    Indonesia 16452</p>
+                                <p class="info">Jl. Gatot Subroto No. 1 No 7, Purwoyoso, Kec. Ngaliyan, Kota. Semarang, Jawa Tengah 50146</p>
                             </div>
 
 
@@ -125,7 +124,7 @@
                         <div class="d-flex mb-3">
                             <i class="material-icons menu-icon me-3">mail</i>
                             <div>
-                                <p class="info">info@rajasulaiman.com</p>
+                                <p class="info">rsx.srg@gmail.com</p>
 
                             </div>
                         </div>
@@ -133,7 +132,8 @@
                         <div class="d-flex mb-3">
                             <i class="material-icons menu-icon me-3">call</i>
                             <div>
-                                <p class="info">+62 894 1924 4127</p>
+                                <p class="info">+62 823-3233-5533</p>
+                                <p class="info">+62 813-9129-1127</p>
 
                             </div>
                         </div>
@@ -163,7 +163,7 @@
         <div class="d-flex bottom-footer justify-content-center align-items-center">
             <p style="color: white;" class="mt-4 f08">2022 - All rights reserved
                 to
-                ©RajasulaimanExpress
+                ©RadjasulaimanExpress
             </p>
         </div>
 
