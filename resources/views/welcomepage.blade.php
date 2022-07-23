@@ -41,7 +41,8 @@
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img class="icon mb-3" src="{{ asset('images/local/phone.png') }}" />
                             <p class="judul">Phone</p>
-                            <p class="isi">+62 (0) 21 22851427</p>
+                            <p class="isi">+62 823-3233-5533</p>
+                            <p class="isi">+62 813-9129-1127</p>
                         </div>
                     </div>
                 </div>
@@ -65,7 +66,7 @@
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img class="icon mb-3" src="{{ asset('images/local/address.png') }}" />
                             <p class="judul">Alamat</p>
-                            <p class="isi">Jl. Gatot Subroto No. 1 No 7,Purwoyoso, Kec. Ngaliyan, Kota. Semarang, Jawa Tengah 50146</p>
+                            <p class="isi text-center">Jl. Gatot Subroto No. 1 No 7,Purwoyoso, Kec. Ngaliyan, Kota. Semarang, Jawa Tengah 50146</p>
                         </div>
                     </div>
                 </div>
