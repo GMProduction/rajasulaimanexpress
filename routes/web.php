@@ -43,6 +43,11 @@ Route::get('/berita', function () {
     return view('berita');
 });
 
+Route::get('/detail-berita', function () {
+    return view('detailberita');
+});
+
+
 Route::get('/layanan', function () {
     return view('layanan');
 });
