@@ -13,7 +13,7 @@ class CreatePricing extends Migration
      */
     public function up()
     {
-        Schema::create('pricing', function (Blueprint $table) {
+        Schema::create('pricings', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('origin_id')->unsigned();
             $table->bigInteger('destination_id')->unsigned();
@@ -33,6 +33,6 @@ class CreatePricing extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pricing');
+        Schema::dropIfExists('pricings');
     }
 }

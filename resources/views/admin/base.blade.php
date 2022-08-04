@@ -19,9 +19,12 @@
     {{-- ICON --}}
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('datatable/datatables.min.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
     <link rel="stylesheet" type="text/css" href="{{ asset('vitalets-bootstrap-datepicker/css/datepicker.css') }}" />
     <link href="{{ asset('/css/sweetalert2.css') }}" rel="stylesheet">
     <script src="{{ asset('/js/sweetalert2.min.js')}}"></script>
+    @yield('css')
 </head>
 
 <body>
@@ -84,6 +87,18 @@
                     <a class="nav-link menu {{ \Illuminate\Support\Facades\Request::path() == 'city' ? 'active' : ''}}" href="/city">
                         <i class="material-icons menu-icon">location_city</i>
                         <p class="menu-text">Kota</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu {{ explode('/', \Illuminate\Support\Facades\Request::path())[0] == 'pricing' ? 'active' : ''}}" href="/pricing">
+                        <i class="material-icons menu-icon">attach_money</i>
+                        <p class="menu-text">Harga</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu {{ explode('/', \Illuminate\Support\Facades\Request::path())[0] == 'article' ? 'active' : ''}}" href="/article">
+                        <i class="material-icons menu-icon">newspaper</i>
+                        <p class="menu-text">Artikel</p>
                     </a>
                 </li>
                 {{-- <li class="nav-item">
@@ -264,7 +279,7 @@
     <script type="text/javascript" src="{{ asset('datatable/datatables.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('datatable/select.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('vitalets-bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     @yield('morejs')
 
 </body>
