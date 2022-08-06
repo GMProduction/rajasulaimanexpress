@@ -8,6 +8,8 @@
     <div class="sub-hero">
 
 
+        <div class="black-cover"></div>
+
         <p class="title" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="300">
             Tentang Kami </p>
         <p class="sub" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200"

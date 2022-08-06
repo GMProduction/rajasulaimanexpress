@@ -43,6 +43,14 @@ Route::get('/berita', function () {
     return view('berita');
 });
 
+Route::get('/cekresi', function () {
+    return view('cekresi');
+});
+
+Route::get('/harga', function () {
+    return view('pricing');
+});
+
 Route::get('/detail-berita', function () {
     return view('detailberita');
 });

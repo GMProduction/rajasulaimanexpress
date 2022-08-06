@@ -7,6 +7,7 @@
 
     <div class="hero">
 
+        <div class="black-cover"></div>
 
         <p class="title" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="300">
             Radja Sulaiman </p>

@@ -7,9 +7,10 @@
 
     <div class="sub-hero">
 
+        <div class="black-cover"></div>
 
         <p class="title" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="300">
-            Berita </p>
+             </p>
         <p class="sub" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200"
             data-aos-duration="600">Radja Sulaiman Express</p>
         <p class="isi" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400"
@@ -22,64 +23,14 @@
     <div class="container">
         <div class="artikel-terbaru mt-5">
 
-            <p class="judul-content mb-5" data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-delay="0"
-                data-aos-duration="300">Berita Terbaru</p>
+            <p class="sub-judul-content mb-0" style="color: #04a3df" data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-delay="0"
+                data-aos-duration="300">Judul Berita</p>
+                <p class="subr-judul-content mt-0 mb-3" data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-delay="0"
+                data-aos-duration="300">Tanggal</p>
 
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="item " data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
-
-                        <img src="{{ asset('images/local/pengirimanudara.jpg') }}" />
-                        <div class="content">
-                            <p class="judul">Apa itu perusahaan Indonesia Freight Forwarding di Indonesia adalah
-                                perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan</p>
-                            <p class="isi">Freight forwarder adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan ...</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="item" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
-
-                        <img src="{{ asset('images/local/pengirimanlaut.jpg') }}" />
-                        <div class="content">
-                            <p class="judul">Apa itu perusahaan Indonesia Freight Forwarding di Indonesia</p>
-                            <p class="isi">Freight forwarder adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan ...
-
-                                adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukanadalah perusahaan
-                                untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukanadalah perusahaan
-                                untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan
-                            </p>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="item" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
-
-                        <img src="{{ asset('images/local/pengirimandarat.jpg') }}" />
-                        <div class="content">
-                            <p class="judul">Apa itu perusahaan Indonesia Freight Forwarding di Indonesia</p>
-                            <p class="isi">Freight forwarder adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan ...</p>
-
-                        </div>
-
-                    </div>
-                </div>
+                <p class="mb-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
 
-            </div>
         </div>
     </div>
 

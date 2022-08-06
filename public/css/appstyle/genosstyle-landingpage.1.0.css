@@ -2,6 +2,83 @@ body {
   font-family: "Nunito";
 }
 
+.step {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: cream;
+}
+
+.v-stepper {
+  position: relative;
+  /*   visibility: visible; */
+}
+
+/* regular step */
+.step .circle {
+  background-color: white;
+  border: 3px solid gray;
+  border-radius: 100%;
+  width: 20px; /* +6 for border */
+  height: 20px;
+  display: inline-block;
+}
+
+.step .line {
+  top: 20px;
+  left: 8px;
+  /*   height: 120px; */
+  height: 100%;
+  position: absolute;
+  border-left: 3px solid gray;
+}
+
+.step.completed .circle {
+  visibility: visible;
+  background-color: rgb(6, 150, 215);
+  border-color: rgb(6, 150, 215);
+}
+
+.step.completed .line {
+  border-left: 3px solid rgb(6, 150, 215);
+}
+
+.step.active .circle {
+  visibility: visible;
+  border-color: rgb(6, 150, 215);
+}
+
+.step.empty .circle {
+  visibility: hidden;
+}
+
+.step.empty .line {
+  /*     visibility: hidden; */
+  /*   height: 150%; */
+  top: 0;
+  height: 150%;
+}
+
+.step:last-child .line {
+  border-left: 3px solid white;
+  z-index: -1; /* behind the circle to completely hide */
+}
+
+.black-cover {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2666666667);
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.card-rsx {
+  padding: 20px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.0666666667);
+  margin-bottom: 50px;
+}
+
 .sub .hero {
   height: 50vh;
 }
@@ -10,6 +87,11 @@ body {
 }
 .sub .content-image .image-as-bg {
   height: 50vh;
+}
+
+.content {
+  margin-left: 20px;
+  display: inline-block;
 }
 
 .sub-hubungi-kami .judul {
@@ -127,8 +209,8 @@ body {
 
 @-webkit-keyframes zoom-in-zoom-out {
   /* 0% {
-      transform: scale(1, 1);
-  } */
+        transform: scale(1, 1);
+    } */
   100% {
     transform: scale(1.5, 1.5);
   }
@@ -136,8 +218,8 @@ body {
 
 @keyframes zoom-in-zoom-out {
   /* 0% {
-      transform: scale(1, 1);
-  } */
+        transform: scale(1, 1);
+    } */
   100% {
     transform: scale(1.5, 1.5);
   }
@@ -146,6 +228,17 @@ p.invert {
   color: white;
 }
 
+.container .subr-judul-content {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: grey;
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+.container .subr-judul-content.invert {
+  color: white;
+}
 .container .sub-judul-content {
   font-size: 1.3rem;
   font-weight: bold;

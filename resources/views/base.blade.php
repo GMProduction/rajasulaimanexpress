@@ -65,6 +65,8 @@
                             <a class=" text-sm ms-2   navitem" href="/hubungi-kami">HUBUNGI KAMI</a>
                             <a class=" text-sm ms-2   navitem" href="/karir">KARIR</a>
                             <a class=" text-sm ms-2   navitem" href="/berita">BERITA</a>
+                            <a class=" text-sm ms-2   navitem" href="/harga">PRICING</a>
+                            <a class=" text-sm ms-2   navitem" href="/cekresi">CEK RESI</a>
                         </div>
 
                     </div>
@@ -145,6 +147,8 @@
                         <a class="navigasi">Hubungi Kami</a>
                         <a class="navigasi">Karir</a>
                         <a class="navigasi">Berita</a>
+                        <a class="navigasi">Pricing</a>
+                        <a class="navigasi">Cek Resi</a>
                     </div>
                     <div class="col-lg-2 col-sm-12">
                         <p class="judul">Tetap Terkoneksi</p>
