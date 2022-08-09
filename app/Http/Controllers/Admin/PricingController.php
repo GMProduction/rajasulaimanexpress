@@ -6,6 +6,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Helper\CustomController;
 use App\Models\City;
+use App\Models\Platform;
 use App\Models\Pricing;
 
 class PricingController extends CustomController
@@ -54,7 +55,8 @@ class PricingController extends CustomController
             }
         }
         $cities = City::all();
-        return view('admin.pricing.add')->with(['cities' => $cities]);
+        $platform = Platform::all();
+        return view('admin.pricing.add')->with(['cities' => $cities, 'platform' => $platform]);
     }
 
     public function patch($id)

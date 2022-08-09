@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Radja Sulaiman Express - Jasa Pengiriman Barang Jalur Darat, Laut, Udara</title>
-
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/appstyle/genosstyle-landingpage.1.0.css') }}" type="text/css">
@@ -24,6 +24,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('aos-master/dist/aos.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('slick-1.8.1/slick/slick.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ asset('slick-1.8.1/slick/slick-theme.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    @yield('css')
 </head>
 
 <body style="position: relative">
@@ -186,6 +188,8 @@
     <script>
         AOS.init();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    @yield('morejs')
 </body>
 
 </html>

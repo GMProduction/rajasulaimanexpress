@@ -90,6 +90,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link menu {{ \Illuminate\Support\Facades\Request::path() == 'platform' ? 'active' : ''}}" href="/platform">
+                        <i class="material-icons menu-icon">flight</i>
+                        <p class="menu-text">Jenis Pengiriman</p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link menu {{ explode('/', \Illuminate\Support\Facades\Request::path())[0] == 'pricing' ? 'active' : ''}}" href="/pricing">
                         <i class="material-icons menu-icon">attach_money</i>
                         <p class="menu-text">Harga</p>

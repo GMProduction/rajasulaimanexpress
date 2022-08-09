@@ -47,9 +47,8 @@ Route::get('/cekresi', function () {
     return view('cekresi');
 });
 
-Route::get('/harga', function () {
-    return view('pricing');
-});
+Route::get('/harga', [\App\Http\Controllers\PricingController::class, 'index']);
+Route::post('/harga/data', [\App\Http\Controllers\PricingController::class, 'data']);
 
 Route::get('/detail-berita', function () {
     return view('detailberita');
@@ -87,6 +86,14 @@ Route::group(['prefix' => '/city'], function () {
     Route::get('/data', [\App\Http\Controllers\Admin\CityController::class, 'data']);
 });
 
+Route::group(['prefix' => '/platform'], function () {
+    Route::get('/', [\App\Http\Controllers\Admin\PlatformController::class, 'index']);
+    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\PlatformController::class, 'store']);
+    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\PlatformController::class, 'patch']);
+    Route::post('/create', [\App\Http\Controllers\Admin\PlatformController::class, 'create']);
+    Route::get('/data', [\App\Http\Controllers\Admin\PlatformController::class, 'data']);
+    Route::post('/delete', [\App\Http\Controllers\Admin\PlatformController::class, 'destroy']);
+});
 Route::group(['prefix' => '/pricing'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\PricingController::class, 'index']);
     Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\PricingController::class, 'store']);

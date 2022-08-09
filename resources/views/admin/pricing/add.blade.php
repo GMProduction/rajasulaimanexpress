@@ -65,6 +65,14 @@
                         <form method="post">
                             @csrf
                             <div class="form-floating w-100 mb-3">
+                                <label for="platform">Jenis Pengiriman</label>
+                                <select class="select2" name="platform" id="platform" style="width: 100%;">
+                                    @foreach($platform as $v)
+                                        <option value="{{ $v->id }}">{{ $v->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-floating w-100 mb-3">
                                 <label for="origin">Kota Asal</label>
                                 <select class="select2" name="origin" id="origin" style="width: 100%;">
                                     <option value="">Pilih Kota Asal</option>

@@ -26,4 +26,9 @@ class Pricing extends Model
     {
         return $this->belongsTo(City::class, 'destination_id');
     }
+
+    public function platform()
+    {
+        return $this->belongsTo(Platform::class, 'platform_id');
+    }
 }
