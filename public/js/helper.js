@@ -84,3 +84,7 @@ function DataTableGenerator(element, url = '/', col = [], colDef = [], data = fu
 function formatUang(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
+function loader() {
+
+}

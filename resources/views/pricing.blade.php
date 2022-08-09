@@ -105,12 +105,19 @@
                             <a class="btn btn-warning d-block" id="btn-check" href="#">Cek Harga</a>
                         </div>
                     </div>
-                    <p class="mt-5 fw-bold">Hasil Harga</p>
-                    <p class="mb-0">Berat :</p>
-                    <p class="mb-0">Mode transportasi :darat</p>
-                    <p class="mb-0">Dari Kota : </p>
-                    <p class="mb-0">Sampai Kota :</p>
-                    <p class="mb-0">Harga : <span class=" badge bg-primary">Rp 200.000</span></p>
+
+                    <div class="" id="pricing-result">
+{{--                        <div class="spinner-border text-primary" role="status">--}}
+{{--                            <span class="visually-hidden">Loading...</span>--}}
+{{--                        </div>--}}
+{{--                        <p class="mt-5 fw-bold">Hasil Harga</p>--}}
+{{--                        <p class="mb-0">Berat :</p>--}}
+{{--                        <p class="mb-0">Mode transportasi :darat</p>--}}
+{{--                        <p class="mb-0">Dari Kota : </p>--}}
+{{--                        <p class="mb-0">Sampai Kota :</p>--}}
+{{--                        <p class="mb-0">Harga : <span class=" badge bg-primary">Rp 200.000</span></p>--}}
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -121,7 +128,10 @@
     <script src="{{ asset('/js/helper.js') }}"></script>
     <script>
         async function check_pricing() {
+            let element = $('#pricing-result');
             try {
+                element.empty();
+                element.append(createLoader('Sedang cek harga...', 300))
                 let response = await $.post('/harga/data', {
                     origin: $('#origin').val(),
                     destination: $('#destination').val(),
@@ -136,6 +146,8 @@
                         $('#weight-check').removeClass('d-none');
                         $('#weight-check').html('Berat Min. ' + min_weight + 'kg')
                     }
+                } else {
+                    element.empty()
                 }
                 console.log(response);
             } catch (e) {
