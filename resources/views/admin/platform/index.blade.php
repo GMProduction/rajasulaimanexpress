@@ -54,14 +54,21 @@
                 window.location.reload();
             });
         }
-        $(document).ready(function () {
-            $('#table-data').DataTable();
+
+        function setDeleteHandler() {
             $('.btn-delete').on('click', function (e) {
                 e.preventDefault();
                 let id = this.dataset.id;
                 AlertConfirm('Yakin Ingin Menghapus?', 'Data yang sudah dihapus tidak dapat dikembalikan', function () {
                     destroy(id);
                 })
+            });
+        }
+        $(document).ready(function () {
+            $('#table-data').DataTable({
+                "fnDrawCallback": function (oSettings) {
+                    setDeleteHandler();
+                }
             });
         });
     </script>

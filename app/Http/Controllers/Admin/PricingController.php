@@ -24,7 +24,7 @@ class PricingController extends CustomController
     public function data()
     {
         try {
-            $data = Pricing::with(['origin', 'destination'])
+            $data = Pricing::with(['origin', 'destination', 'platform'])
                 ->get();
             return $this->basicDataTables($data);
         } catch (\Exception $e) {
@@ -38,10 +38,12 @@ class PricingController extends CustomController
             try {
                 $origin = $this->postField('origin');
                 $destination = $this->postField('destination');
+                $platform = $this->postField('platform');
                 $min_weight = $this->postField('min_weight');
                 $price = $this->postField('price');
                 $estimate = $this->postField('estimate');
                 $data = [
+                    'platform_id' => $platform,
                     'origin_id' => $origin,
                     'destination_id' => $destination,
                     'min_weight' => $min_weight,
@@ -64,6 +66,7 @@ class PricingController extends CustomController
         $data = Pricing::findOrFail($id);
         if ($this->request->method() === 'POST') {
             try {
+                $platform = $this->postField('platform');
                 $origin = $this->postField('origin');
                 $destination = $this->postField('destination');
                 $min_weight = $this->postField('min_weight');
@@ -72,6 +75,7 @@ class PricingController extends CustomController
                 $data_request = [
                     'origin_id' => $origin,
                     'destination_id' => $destination,
+                    'platform_id' => $platform,
                     'min_weight' => $min_weight,
                     'price' => $price,
                     'estimate' => $estimate,
@@ -83,6 +87,18 @@ class PricingController extends CustomController
             }
         }
         $cities = City::all();
-        return view('admin.pricing.edit')->with(['cities' => $cities, 'data' => $data]);
+        $platform = Platform::all();
+        return view('admin.pricing.edit')->with(['cities' => $cities, 'data' => $data, 'platform' => $platform]);
+    }
+
+    public function destroy()
+    {
+        try {
+            $id = $this->postField('id');
+            Pricing::destroy($id);
+            return $this->jsonResponse('success', 200);
+        }catch (\Exception $e) {
+            return $this->jsonResponse('failed', 500);
+        }
     }
 }

@@ -56,4 +56,15 @@ class ProvinceController extends CustomController
         }
         return view('admin.province.edit')->with(['data' => $data]);
     }
+
+    public function destroy()
+    {
+        try {
+            $id = $this->postField('id');
+            Province::destroy($id);
+            return $this->jsonResponse('success', 200);
+        }catch (\Exception $e) {
+            return $this->jsonResponse('failed', 500);
+        }
+    }
 }

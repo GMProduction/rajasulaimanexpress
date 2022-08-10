@@ -10,6 +10,7 @@ class Pricing extends Model
     use HasFactory;
 
     protected $fillable = [
+        'platform_id',
         'origin_id',
         'destination_id',
         'min_weight',

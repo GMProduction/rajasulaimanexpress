@@ -51,10 +51,9 @@
             </a>
 
             <ul class="dropdown-menu custom" aria-labelledby="dropdownprofile">
-                <li><a class="dropdown-item disabled" href="#">pradanamahendra@gmail.com</a></li>
+                <li><a class="dropdown-item disabled" href="#">{{ auth()->user()->username }}</a></li>
                 <hr>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="/logout">Logout</a></li>
             </ul>
 
         </div>
@@ -92,7 +91,7 @@
                 <li class="nav-item">
                     <a class="nav-link menu {{ \Illuminate\Support\Facades\Request::path() == 'platform' ? 'active' : ''}}" href="/platform">
                         <i class="material-icons menu-icon">flight</i>
-                        <p class="menu-text">Jenis Pengiriman</p>
+                        <p class="menu-text">Mode Transport</p>
                     </a>
                 </li>
                 <li class="nav-item">

@@ -36,7 +36,7 @@
                     <td>
                         <div class="d-flex">
                             <a href="/province/{{ $v->id }}/patch" class="btn-success btn-edit sml rnd me-1" data-id="{{ $v->id }}" data-name="{{ $v->name }}">Edit<i class="material-icons menu-icon ms-2">edit</i></a>
-                            <a href="#" class="btn-danger sml rnd" data-id="{{ $v->id }}">Hapus <i class="material-icons menu-icon ms-2">delete</i></a>
+                            <a href="#" class="btn-danger sml rnd btn-delete" data-id="{{ $v->id }}">Hapus <i class="material-icons menu-icon ms-2">delete</i></a>
                         </div>
                     </td>
                 </tr>
@@ -49,8 +49,29 @@
 @section('morejs')
     <script src="{{ asset('/js/helper.js') }}"></script>
     <script>
+        function destroy(id) {
+            AjaxPost('/province/delete', {id}, function () {
+                window.location.reload();
+            });
+        }
+
+        function setDeleteHandler() {
+            $('.btn-delete').on('click', function (e) {
+                e.preventDefault();
+                let id = this.dataset.id;
+                AlertConfirm('Yakin Ingin Menghapus?', 'Data yang sudah dihapus tidak dapat dikembalikan', function () {
+                    destroy(id);
+                })
+            });
+        }
+
         $(document).ready(function () {
-            $('#table-data').DataTable({});
+            $('#table-data').DataTable({
+                "fnDrawCallback": function (oSettings) {
+                    setDeleteHandler();
+                }
+            });
+            setDeleteHandler();
         });
     </script>
 @endsection

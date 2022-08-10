@@ -20,6 +20,7 @@
             <thead>
             <tr>
                 <th width="10%">#</th>
+                <th>Mode</th>
                 <th>Kota Asal</th>
                 <th>Kota Tujuan</th>
                 <th>Berat Minimum (kg)</th>
@@ -86,39 +87,23 @@
             table.ajax.reload();
         }
 
-        function clear() {
-            $('#name').val('');
+        function destroy(id) {
+            AjaxPost('/pricing/delete', {id}, function () {
+                window.location.reload();
+            });
         }
-
-        async function create() {
-            try {
-                await $.post('/city/create', {
-                    name: $('#name').val(),
-                });
-                reload();
-                clear();
-            } catch (e) {
-                ErrorAlert('Error', 'internal server error');
-            }
-        }
-
-        async function patch() {
-            try {
-                await $.post('/city/create', {
-                    name: $('#name-edit').val(),
-                });
-                reload();
-                clear();
-            } catch (e) {
-                ErrorAlert('Error', 'internal server error');
-            }
-        }
-
         function setEditHandler() {
             $('.btn-edit').on('click', function (e) {
                 e.preventDefault();
                 let id = this.dataset.id;
                 window.location.href = '/pricing/' + id + '/patch';
+            });
+            $('.btn-delete').on('click', function (e) {
+                e.preventDefault();
+                let id = this.dataset.id;
+                AlertConfirm('Yakin Ingin Menghapus?', 'Data yang sudah dihapus tidak dapat dikembalikan', function () {
+                    destroy(id);
+                })
             });
         }
 
@@ -126,6 +111,7 @@
 
             table = DataTableGenerator('#table-data', '/pricing/data', [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex', searchable: false, orderable: false},
+                {data: 'platform.name'},
                 {data: 'origin.name'},
                 {data: 'destination.name'},
                 {data: 'min_weight'},
@@ -139,7 +125,7 @@
                     data: null, render: function (data) {
                         return '<div class="d-flex">' +
                             '<a href="#" class="btn-success btn-edit sml rnd me-1" data-id="' + data['id'] + '" data-name="' + data['name'] + '">Edit<i class="material-icons menu-icon ms-2">edit</i></a>' +
-                            '<a href="#" class="btn-danger sml rnd" data-id="' + data['id'] + '">Hapus <i class="material-icons menu-icon ms-2">delete</i></a></div>';
+                            '<a href="#" class="btn-danger sml rnd btn-delete" data-id="' + data['id'] + '">Hapus <i class="material-icons menu-icon ms-2">delete</i></a></div>';
                     }
                 },
             ], [
@@ -155,11 +141,6 @@
                 "fnDrawCallback": function (oSettings) {
                     setEditHandler();
                 }
-            });
-
-            $('#btn-add').on('click', function (e) {
-                e.preventDefault();
-                create();
             });
             setEditHandler();
         });

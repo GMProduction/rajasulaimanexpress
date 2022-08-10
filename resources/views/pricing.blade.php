@@ -61,15 +61,12 @@
                             <div class="mb-1">
                                 <a>Berat (Kg)</a>
                                 <input type="number" class="form-control" id="weight" value="1">
-                                <div id="weight-check" class="form-text d-none" style="color: #b11f1f">
-                                    Berat Min. 10kg
-                                </div>
                             </div>
                         </div>
 
                         <div class="col-md-3 col-sm-12 mb-1">
                             <a>Mode Transportasi</a>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" id="platform">
                                 @foreach($platform as $p)
                                     <option value="{{ $p->id }}">{{ $p->name }}</option>
                                 @endforeach
@@ -106,16 +103,11 @@
                         </div>
                     </div>
 
-                    <div class="" id="pricing-result">
-{{--                        <div class="spinner-border text-primary" role="status">--}}
-{{--                            <span class="visually-hidden">Loading...</span>--}}
-{{--                        </div>--}}
-{{--                        <p class="mt-5 fw-bold">Hasil Harga</p>--}}
-{{--                        <p class="mb-0">Berat :</p>--}}
-{{--                        <p class="mb-0">Mode transportasi :darat</p>--}}
-{{--                        <p class="mb-0">Dari Kota : </p>--}}
-{{--                        <p class="mb-0">Sampai Kota :</p>--}}
-{{--                        <p class="mb-0">Harga : <span class=" badge bg-primary">Rp 200.000</span></p>--}}
+                    <div class="mt-2" id="pricing-result">
+                        {{--                        <div class="spinner-border text-primary" role="status">--}}
+                        {{--                            <span class="visually-hidden">Loading...</span>--}}
+                        {{--                        </div>--}}
+
                     </div>
 
                 </div>
@@ -127,6 +119,33 @@
 @section('morejs')
     <script src="{{ asset('/js/helper.js') }}"></script>
     <script>
+
+        function elementMinWeight(weight) {
+            return '<div style="min-height: 200px; display: flex; align-items: center; justify-content: center">' +
+                '<p class="fw-bold" style="color: #b11f1f">Berat Minimal Pengiriman ' + weight + ' kg</p>' +
+                '</div>';
+        }
+
+        function elementNotFound() {
+            return '<div style="min-height: 200px; display: flex; align-items: center; justify-content: center">' +
+                '<p class="fw-bold" style="color: #b11f1f">Mohon maaf, untuk sementara kami belum melayani pengiriman di daerah tujuan anda...</p>' +
+                '</div>';
+        }
+
+        function elementPricing(data) {
+            let total = formatUang(data['total']);
+            let detail = data['data'];
+            let weight = data['weight'];
+            return '<div class="mt-3">' +
+                '<p class="mb-0 fw-bold">Berat : <span style="font-weight: normal">' + weight + ' kg</span></p>\n' +
+                '<p class="mb-0 fw-bold">Mode transportasi : <span style="font-weight: normal">' + detail['platform']['name'] + '</span></p>\n' +
+                '<p class="mb-0 fw-bold">Kota Asal : <span style="font-weight: normal">' + detail['origin']['name'] + '</span></p>\n' +
+                '<p class="mb-0 fw-bold">Sampai Tujuan : <span style="font-weight: normal">' + detail['destination']['name'] + '<span></p>\n' +
+                '<p class="mb-0 fw-bold">Estimasi : <span style="font-weight: normal">' + detail['estimate'] + ' hari</span></p>\n' +
+                '<p class="mb-0 fw-bold">Harga : <span class=" badge bg-primary">Rp ' + total + '</span></p>' +
+                '</div>';
+        }
+
         async function check_pricing() {
             let element = $('#pricing-result');
             try {
@@ -135,19 +154,23 @@
                 let response = await $.post('/harga/data', {
                     origin: $('#origin').val(),
                     destination: $('#destination').val(),
-                    platform: $('#weight').val(),
-                    weight: $('#min_weight').val()
+                    platform: $('#platform').val(),
+                    weight: $('#weight').val()
                 });
                 if (response['status'] === 202) {
                     let type = response['payload']['type'];
                     if (type === 'weight') {
                         let min_weight = response['payload']['data'];
-                        $('#weight-check').addClass('d-block');
-                        $('#weight-check').removeClass('d-none');
-                        $('#weight-check').html('Berat Min. ' + min_weight + 'kg')
+                        element.empty();
+                        element.append(elementMinWeight(min_weight));
+                    } else {
+                        element.empty();
+                        element.append(elementNotFound());
                     }
                 } else {
-                    element.empty()
+                    let payload = response['payload'];
+                    element.empty();
+                    element.append(elementPricing(payload));
                 }
                 console.log(response);
             } catch (e) {

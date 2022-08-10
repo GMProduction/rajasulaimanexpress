@@ -47,6 +47,8 @@ Route::get('/cekresi', function () {
     return view('cekresi');
 });
 
+Route::post('/cekresi/data', [\App\Http\Controllers\TrackingController::class, 'track']);
+
 Route::get('/harga', [\App\Http\Controllers\PricingController::class, 'index']);
 Route::post('/harga/data', [\App\Http\Controllers\PricingController::class, 'data']);
 
@@ -76,14 +78,14 @@ Route::group(['prefix' => '/province'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\ProvinceController::class, 'index']);
     Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\ProvinceController::class, 'store']);
     Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\ProvinceController::class, 'patch']);
-    Route::post('/create', [\App\Http\Controllers\Admin\CityController::class, 'create']);
-    Route::get('/data', [\App\Http\Controllers\Admin\CityController::class, 'data']);
+    Route::post('/delete', [\App\Http\Controllers\Admin\ProvinceController::class, 'destroy']);
 });
 
 Route::group(['prefix' => '/city'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\CityController::class, 'index']);
-    Route::post('/create', [\App\Http\Controllers\Admin\CityController::class, 'create']);
-    Route::get('/data', [\App\Http\Controllers\Admin\CityController::class, 'data']);
+    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\CityController::class, 'store']);
+    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\CityController::class, 'patch']);
+    Route::post('/delete', [\App\Http\Controllers\Admin\CityController::class, 'destroy']);
 });
 
 Route::group(['prefix' => '/platform'], function () {
@@ -100,6 +102,7 @@ Route::group(['prefix' => '/pricing'], function () {
     Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\PricingController::class, 'patch']);
     Route::post('/create', [\App\Http\Controllers\Admin\PricingController::class, 'create']);
     Route::get('/data', [\App\Http\Controllers\Admin\PricingController::class, 'data']);
+    Route::post('/delete', [\App\Http\Controllers\Admin\PricingController::class, 'destroy']);
 });
 
 Route::group(['prefix' => '/article'], function () {

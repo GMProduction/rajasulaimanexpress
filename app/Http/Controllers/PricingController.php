@@ -30,13 +30,16 @@ class PricingController extends CustomController
             $destination = $this->postField('destination');
             $platform = $this->postField('platform');
             $weight = $this->postField('weight');
-            $pricing = Pricing::with(['platform'])
+            $pricing = Pricing::with(['platform', 'origin', 'destination'])
                 ->where('origin_id', '=', $origin)
                 ->where('destination_id', '=', $destination)
                 ->where('platform_id', '=', $platform)
                 ->first();
             if (!$pricing) {
-                return $this->jsonResponse('pengiriman tidak tersedia', 202);
+                return $this->jsonResponse('pengiriman tidak tersedia', 202, [
+                    'type' => 'empty',
+                    'data' => $weight . $platform
+                ]);
             }
             $min_weight = $pricing->min_weight;
             if ($weight < $min_weight) {
@@ -45,7 +48,12 @@ class PricingController extends CustomController
                     'data' => $min_weight
                 ]);
             }
-            return $this->jsonResponse('success', 200, $pricing);
+            $total = $pricing->price * $weight;
+            return $this->jsonResponse('success', 200, [
+                'total' => $total,
+                'weight' => $weight,
+                'data' => $pricing
+            ]);
         } catch (\Exception $e) {
             return $this->jsonResponse('terjadi kesalahan ' . $e->getMessage());
         }
