@@ -171,8 +171,7 @@
             <p class="invert mb-5" style="text-align: justify;
                 text-justify: inter-word;"
                data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0" data-aos-duration="500">
-                PT.
-                Radja Sulaiman Express International Freights & Forwarding menawarkan layanan pengiriman barang baik
+                PT. Kejayaan Radja Sulaiman International Freights & Forwarding menawarkan layanan pengiriman barang baik
                 impor maupun ekspor secara global. Dengan jaringan mitra dan agen yang luas di seluruh dunia, kami
                 dapat memberikan harga terbaik dan pilihan rute harga paling efisien.
 
