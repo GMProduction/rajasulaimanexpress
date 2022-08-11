@@ -111,7 +111,13 @@
                         <div class="d-flex mb-3">
                             <i class="material-icons menu-icon me-3">home</i>
                             <div>
-                                <p class="info">Jl. Gatot Subroto No. 1 No 7, Purwoyoso, Kec. Ngaliyan, Kota. Semarang, Jawa Tengah 50146</p>
+                                <p class="info">Jl. Gatot Subroto
+                                    Kawasan Industri Candi
+                                    Blok K No 7
+                                    Kavling 1
+                                    Purwoyoso
+                                    Semarang
+                                    50184</p>
                             </div>
 
 

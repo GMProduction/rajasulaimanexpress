@@ -67,8 +67,13 @@
                         <div class="d-flex flex-column justify-content-center align-items-center">
                             <img class="icon mb-3" src="{{ asset('images/local/address.png') }}"/>
                             <p class="judul">Alamat</p>
-                            <p class="isi text-center">Jl. Gatot Subroto No. 1 No 7,Purwoyoso, Kec. Ngaliyan, Kota.
-                                Semarang, Jawa Tengah 50146</p>
+                            <p class="isi text-center">Jl. Gatot Subroto
+                                Kawasan Industri Candi
+                                Blok K No 7
+                                Kavling 1
+                                Purwoyoso
+                                Semarang
+                                50184</p>
                         </div>
                     </div>
                 </div>
@@ -263,8 +268,8 @@
             {{--                    </div>--}}
             {{--                </div>--}}
             {{--                <div class="col-lg-4 col-md-6 col-sm-12">--}}
-            {{--                    <div class="item" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"--}}
-            {{--                         data-aos-duration="1000">--}}
+{{--                                <div class="item" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"--}}
+{{--                                     data-aos-duration="1000">--}}
 
             {{--                        <img src="{{ asset('images/local/pengirimanlaut.jpg') }}"/>--}}
             {{--                        <div class="content">--}}
@@ -338,7 +343,7 @@
 
         function articleElement(data) {
             return '<div class="col-lg-4 col-md-6 col-sm-12">' +
-                '<div class="item article-item" data-id=' + data['id'] + '>\n' +
+                '<div class="item article-item" data-id=' + data['id'] + ' >\n' +
                 '                        <img src="' + data['image'] + '" alt="thumbnail"/>\n' +
                 '                        <div class="content">\n' +
                 '                            <p class="judul">' + data['title'] + '</p>\n' +
