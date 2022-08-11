@@ -26,7 +26,7 @@
             <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="/dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="/article">Artikel</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Tambah</li>
+                <li class="breadcrumb-item active" aria-current="page">Edit</li>
             </ol>
         </nav>
     </div>
@@ -45,18 +45,19 @@
                         <form method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="title" name="title" value="">
+                                <input type="text" class="form-control" id="title" name="title" value="{{ $data->title }}">
                                 <label for="title" class="form-label">Judul Artikel</label>
                             </div>
                             <div class="mb-3">
                                 <label for="short_description" class="form-label">Deskripsi Singkat</label>
-                                <textarea class="form-control" id="short_description" rows="3" name="short_description"></textarea>
+                                <textarea class="form-control" id="short_description" rows="3" name="short_description">{{ $data->short_description }}</textarea>
                             </div>
                             <div class="mb-3">
                                 <label for="thumbnail" class="form-label">Gambar Thumbnail</label>
                                 <input class="form-control" type="file" id="thumbnail" name="thumbnail">
                             </div>
                             <textarea id="editor" name="editor" class="form-control">
+                                {{ $data->content }}
                             </textarea>
                             <hr>
                             <div class="w-100 mt-2 d-flex justify-content-end">

@@ -18,21 +18,18 @@
     </div>
 
     <div class="mt-2">
-                <table id="table-data" class="table table-striped enselect" style="width:100%">
-                    <thead>
-                    <tr>
-                        <th width="10%">#</th>
-                        <th>Judul</th>
-                        <th>Thumbnail</th>
-                        <th width="12%">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    </tbody>
-                </table>
-{{--        <h1>Classic editor</h1>--}}
-
-{{--        <button id="data" type="button">Data</button>--}}
+        <table id="table-data" class="table table-striped enselect" style="width:100%">
+            <thead>
+            <tr>
+                <th width="10%">#</th>
+                <th>Judul</th>
+                <th>Thumbnail</th>
+                <th width="12%">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
 @endsection
 
@@ -46,26 +43,37 @@
         }
 
         var editor;
+
+        function destroy(id) {
+            AjaxPost('/article/delete', {id}, function () {
+                window.location.reload();
+            });
+        }
+
+        function setDeleteHandler() {
+            $('.btn-delete').on('click', function (e) {
+                e.preventDefault();
+                let id = this.dataset.id;
+                AlertConfirm('Yakin Ingin Menghapus?', 'Data yang sudah dihapus tidak dapat dikembalikan', function () {
+                    destroy(id);
+                })
+            });
+        }
         $(document).ready(function () {
-
-
-            // $('#data').on('click', function () {
-            //     const data = editor.getData();
-            //     console.log(data);
-            // })
             table = DataTableGenerator('#table-data', '/article/data', [
                 {data: 'DT_RowIndex', name: 'DT_RowIndex', searchable: false, orderable: false},
                 {data: 'title'},
                 {
                     data: null, render: function (data) {
-                        return '';
+                        let url = data['image'];
+                        return '<a href="' + url + '" target="_blank"><img src="' + url + '" alt="thumbnail" height="200"></a>';
                     }
                 },
                 {
                     data: null, render: function (data) {
                         return '<div class="d-flex">' +
-                            '<a href="#" class="btn-success btn-edit sml rnd me-1" data-id="' + data['id'] + '" data-name="' + data['name'] + '">Edit<i class="material-icons menu-icon ms-2">edit</i></a>' +
-                            '<a href="#" class="btn-danger sml rnd" data-id="' + data['id'] + '">Hapus <i class="material-icons menu-icon ms-2">delete</i></a></div>';
+                            '<a href="/article/' + data['id'] + '/patch" class="btn-success btn-edit sml rnd me-1" data-id="' + data['id'] + '" data-name="' + data['name'] + '">Edit<i class="material-icons menu-icon ms-2">edit</i></a>' +
+                            '<a href="#" class="btn-danger sml rnd btn-delete" data-id="' + data['id'] + '">Hapus <i class="material-icons menu-icon ms-2">delete</i></a></div>';
                     }
                 },
             ], [
@@ -74,14 +82,9 @@
 
             }, {
                 "fnDrawCallback": function (oSettings) {
+                    setDeleteHandler();
                 }
             });
-            //
-            // $('#btn-add').on('click', function (e) {
-            //     e.preventDefault();
-            //     create();
-            // });
-            // setEditHandler();
         });
     </script>
 @endsection

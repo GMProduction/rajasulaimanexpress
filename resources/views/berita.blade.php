@@ -12,9 +12,9 @@
         <p class="title" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-duration="300">
             Berita </p>
         <p class="sub" data-aos="fade-left" data-aos-anchor-placement="center-bottom" data-aos-delay="200"
-            data-aos-duration="600">Radja Sulaiman Express</p>
+           data-aos-duration="600">Radja Sulaiman Express</p>
         <p class="isi" data-aos="fade-right" data-aos-anchor-placement="center-bottom" data-aos-delay="400"
-            data-aos-duration="900">Solusi layanan lengkap pengiriman barang anda </p>
+           data-aos-duration="900">Solusi layanan lengkap pengiriman barang anda </p>
     </div>
 
 
@@ -24,67 +24,37 @@
         <div class="artikel-terbaru mt-5">
 
             <p class="judul-content mb-5" data-aos="fade-down" data-aos-easing="ease-in-back" data-aos-delay="0"
-                data-aos-duration="300">Berita Terbaru</p>
+               data-aos-duration="300">Berita Terbaru</p>
 
             <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="item " data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
+                @foreach($data as $v)
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="item article-item" data-id="{{ $v->id }}" data-aos="fade-up"
+                             data-aos-easing="ease-in-back" data-aos-delay="0"
+                             data-aos-duration="1000">
 
-                        <img src="{{ asset('images/local/pengirimanudara.jpg') }}" />
-                        <div class="content">
-                            <p class="judul">Apa itu perusahaan Indonesia Freight Forwarding di Indonesia adalah
-                                perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan</p>
-                            <p class="isi">Freight forwarder adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan ...</p>
+                            <img src="{{$v->image}}" alt="thumbnail"/>
+                            <div class="content">
+                                <p class="judul">{{ ucwords($v->title) }}</p>
+                                <p class="isi">{{ $v->short_description }}</p>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="item" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
-
-                        <img src="{{ asset('images/local/pengirimanlaut.jpg') }}" />
-                        <div class="content">
-                            <p class="judul">Apa itu perusahaan Indonesia Freight Forwarding di Indonesia</p>
-                            <p class="isi">Freight forwarder adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan ...
-
-                                adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukanadalah perusahaan
-                                untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukanadalah perusahaan
-                                untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan
-                            </p>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="item" data-aos="fade-up" data-aos-easing="ease-in-back" data-aos-delay="0"
-                        data-aos-duration="1000">
-
-                        <img src="{{ asset('images/local/pengirimandarat.jpg') }}" />
-                        <div class="content">
-                            <p class="judul">Apa itu perusahaan Indonesia Freight Forwarding di Indonesia</p>
-                            <p class="isi">Freight forwarder adalah perusahaan untuk mengatur transportasi
-                                komoditas atas permintaan pelanggan ke lokasi yang telah ditentukan ...</p>
-
-                        </div>
-
-                    </div>
-                </div>
-
-
+                @endforeach
             </div>
         </div>
     </div>
+@endsection
 
-
-
-
-@endsection('content')
+@section('morejs')
+    <script src="{{ asset('/js/helper.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.article-item').on('click', function () {
+                let id = this.dataset.id;
+                window.location.href = '/berita/' + id;
+            })
+        });
+    </script>
+@endsection

@@ -39,9 +39,6 @@ Route::get('/karir', function () {
     return view('karir');
 });
 
-Route::get('/berita', function () {
-    return view('berita');
-});
 
 Route::get('/cekresi', function () {
     return view('cekresi');
@@ -52,9 +49,8 @@ Route::post('/cekresi/data', [\App\Http\Controllers\TrackingController::class, '
 Route::get('/harga', [\App\Http\Controllers\PricingController::class, 'index']);
 Route::post('/harga/data', [\App\Http\Controllers\PricingController::class, 'data']);
 
-Route::get('/detail-berita', function () {
-    return view('detailberita');
-});
+Route::get('/berita', [\App\Http\Controllers\ArticleController::class, 'index']);
+Route::get('/berita/{id}', [\App\Http\Controllers\ArticleController::class, 'detail']);
 
 
 Route::get('/layanan', function () {
@@ -71,35 +67,35 @@ Route::get('/admin/user', function () {
 });
 
 Route::match(['post', 'get'], '/login-admin', [\App\Http\Controllers\Admin\AuthController::class, 'login']);
-Route::get( '/logout', [\App\Http\Controllers\Admin\AuthController::class, 'logout']);
+Route::get('/logout', [\App\Http\Controllers\Admin\AuthController::class, 'logout']);
 Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
 Route::group(['prefix' => '/province'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\ProvinceController::class, 'index']);
-    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\ProvinceController::class, 'store']);
-    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\ProvinceController::class, 'patch']);
+    Route::match(['post', 'get'], '/store', [\App\Http\Controllers\Admin\ProvinceController::class, 'store']);
+    Route::match(['post', 'get'], '/{id}/patch', [\App\Http\Controllers\Admin\ProvinceController::class, 'patch']);
     Route::post('/delete', [\App\Http\Controllers\Admin\ProvinceController::class, 'destroy']);
 });
 
 Route::group(['prefix' => '/city'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\CityController::class, 'index']);
-    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\CityController::class, 'store']);
-    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\CityController::class, 'patch']);
+    Route::match(['post', 'get'], '/store', [\App\Http\Controllers\Admin\CityController::class, 'store']);
+    Route::match(['post', 'get'], '/{id}/patch', [\App\Http\Controllers\Admin\CityController::class, 'patch']);
     Route::post('/delete', [\App\Http\Controllers\Admin\CityController::class, 'destroy']);
 });
 
 Route::group(['prefix' => '/platform'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\PlatformController::class, 'index']);
-    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\PlatformController::class, 'store']);
-    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\PlatformController::class, 'patch']);
+    Route::match(['post', 'get'], '/store', [\App\Http\Controllers\Admin\PlatformController::class, 'store']);
+    Route::match(['post', 'get'], '/{id}/patch', [\App\Http\Controllers\Admin\PlatformController::class, 'patch']);
     Route::post('/create', [\App\Http\Controllers\Admin\PlatformController::class, 'create']);
     Route::get('/data', [\App\Http\Controllers\Admin\PlatformController::class, 'data']);
     Route::post('/delete', [\App\Http\Controllers\Admin\PlatformController::class, 'destroy']);
 });
 Route::group(['prefix' => '/pricing'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\PricingController::class, 'index']);
-    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\PricingController::class, 'store']);
-    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\PricingController::class, 'patch']);
+    Route::match(['post', 'get'], '/store', [\App\Http\Controllers\Admin\PricingController::class, 'store']);
+    Route::match(['post', 'get'], '/{id}/patch', [\App\Http\Controllers\Admin\PricingController::class, 'patch']);
     Route::post('/create', [\App\Http\Controllers\Admin\PricingController::class, 'create']);
     Route::get('/data', [\App\Http\Controllers\Admin\PricingController::class, 'data']);
     Route::post('/delete', [\App\Http\Controllers\Admin\PricingController::class, 'destroy']);
@@ -107,10 +103,11 @@ Route::group(['prefix' => '/pricing'], function () {
 
 Route::group(['prefix' => '/article'], function () {
     Route::get('/', [\App\Http\Controllers\Admin\ArticleController::class, 'index']);
-    Route::match(['post', 'get'],'/store', [\App\Http\Controllers\Admin\ArticleController::class, 'store']);
-    Route::match(['post', 'get'],'/{id}/patch', [\App\Http\Controllers\Admin\ArticleController::class, 'patch']);
-    Route::post('/create', [\App\Http\Controllers\Admin\ArticleController::class, 'create']);
+    Route::match(['post', 'get'], '/store', [\App\Http\Controllers\Admin\ArticleController::class, 'store']);
+    Route::match(['post', 'get'], '/{id}/patch', [\App\Http\Controllers\Admin\ArticleController::class, 'patch']);
     Route::get('/data', [\App\Http\Controllers\Admin\ArticleController::class, 'data']);
+    Route::get('/list', [\App\Http\Controllers\Admin\ArticleController::class, 'list']);
+    Route::post('/delete', [\App\Http\Controllers\Admin\ArticleController::class, 'destroy']);
 });
 
 //Route::get('/admin', [UserController::class, 'index']);
