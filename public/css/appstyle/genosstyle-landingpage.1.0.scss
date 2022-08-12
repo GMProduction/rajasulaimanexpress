@@ -276,19 +276,18 @@ p {
   }
 }
 .container {
+  .subr-judul-content {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: grey;
+    margin-top: 50px;
+    margin-bottom: 0;
 
-    .subr-judul-content {
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
-        color: grey;
-        margin-top: 50px;
-        margin-bottom: 0;
-
-        &.invert {
-          color: white;
-        }
-      }
+    &.invert {
+      color: white;
+    }
+  }
 
   .sub-judul-content {
     font-size: 1.3rem;
@@ -771,4 +770,35 @@ input.form-control {
   appearance: none;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+  .bg-white-in-sm {
+    background-color: white;
+  }
+
+  .color-black-in-sm{
+    color: black;
+  }
+
+  .mbs-5{
+    margin-bottom: 50px;
+  }
+
+  .dapatkan-penawaran{
+    min-height: 50vh;
+    .mbake {
+        display: none;
+      }
+
+      .form-penawan{
+        width: 80%;
+      }
+  }
+
+  .sub-hero{
+    .title{
+        font-size: 3rem;
+    }
+  }
 }

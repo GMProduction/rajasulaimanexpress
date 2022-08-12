@@ -36,17 +36,16 @@
             <div class="container">
                 <a class="navbar-brand text-xl text-primary" href="#" style=" font-weight: bold"><img
                         style="height: 3em" src="{{ asset('images/local/logo.png') }}"></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="collapse navbar-collapse bg-white-in-sm" id="navbarNav">
                     <div class="navbar-nav ms-auto text-right d-flex flex-column ">
                         <div class="d-block ms-auto pb-2 pt-2 hide-when-scrolled">
-                            <i class='fa fa-facebook sosmed-icon-nav fb'></i>
-                            <i class='fa fa-instagram sosmed-icon-nav ig'></i>
-                            <i class='fa fa-twitter sosmed-icon-nav tw'></i>
-                            <i class='fa fa-whatsapp sosmed-icon-nav wa'></i>
+                            <i class='fa fa-facebook sosmed-icon-nav fb color-black-in-sm'></i>
+                            <i class='fa fa-instagram sosmed-icon-nav ig color-black-in-sm'></i>
+                            <i class='fa fa-twitter sosmed-icon-nav tw color-black-in-sm'></i>
+                            <i class='fa fa-whatsapp sosmed-icon-nav wa color-black-in-sm'></i>
                             <a class="navitem">Dapatkan Penawaran</a>
                         </div>
                         <div class="d-block ms-auto mb-2">
@@ -63,12 +62,12 @@
                                     <li><a class="dropdown-item" href="#">Project Handling</a></li>
                                 </ul>
                             </li>
-                            <a class=" text-sm ms-2   navitem" href="/tentang-kami">TENTANG KAMI</a>
-                            <a class=" text-sm ms-2   navitem" href="/hubungi-kami">HUBUNGI KAMI</a>
-                            <a class=" text-sm ms-2   navitem" href="/karir">KARIR</a>
-                            <a class=" text-sm ms-2   navitem" href="/berita">BERITA</a>
-                            <a class=" text-sm ms-2   navitem" href="/harga">PRICING</a>
-                            <a class=" text-sm ms-2   navitem" href="/cekresi">CEK RESI</a>
+                            <a class=" text-sm ms-2 navitem" href="/tentang-kami">TENTANG KAMI</a>
+                            <a class=" text-sm ms-2 navitem" href="/hubungi-kami">HUBUNGI KAMI</a>
+                            <a class=" text-sm ms-2 navitem" href="/karir">KARIR</a>
+                            <a class=" text-sm ms-2 navitem" href="/berita">BERITA</a>
+                            <a class=" text-sm ms-2 navitem" href="/harga">PRICING</a>
+                            <a class=" text-sm ms-2 navitem" href="/cekresi">CEK RESI</a>
                         </div>
 
                     </div>
